@@ -90,7 +90,7 @@ def log_response(response):
 def main():
     while True:
         with sync_playwright() as p:
-            browser = p.chromium.launch(headless=False)
+            browser = p.chromium.launch(headless=True)
             page = browser.new_page()
             page.on("response", log_response)
             page.goto(PRODUCT_URL)
